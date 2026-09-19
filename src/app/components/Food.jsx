@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Food = ({ food }) => {
   const { dish_name, rating, price, image_link } = food;
@@ -20,6 +21,11 @@ const Food = ({ food }) => {
           height={400}
         ></Image>
       </figure>
+
+      <Link href={`/menu/${food.id}`}>
+        <button className="btn btn-neutral m-4">Details</button>
+
+      </Link>
     </div>
   );
 };
